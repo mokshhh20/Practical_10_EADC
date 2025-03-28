@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Random Number Generator</title>
+    <script>
+        function fetchNumber(endpoint) {
+            fetch(endpoint)
+                .then(response => response.json())
+                .then(data => {
+                    alert('Generated number: ' + data.number);
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <h1>This is a Flask App containerized with Docker and created by Moksh</h1>
+    <h2>App has been containerized</h2>
+    <button onclick="fetchNumber('/generate-even')">Generate Random Even Number</button>
+    <button onclick="fetchNumber('/generate-odd')">Generate Random Odd Number</button>
+</body>
+</html>
